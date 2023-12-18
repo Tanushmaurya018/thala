@@ -1,4 +1,4 @@
-import {  useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import useSound from "use-sound";
 import thalasong from "./assets/thalasong.mp3";
@@ -15,11 +15,13 @@ function App() {
   function isThala(e) {
     const lengthInput = input.length;
 
-    if (lengthInput === 7 && (input !== "gambhir" ||
-      "Gambhir" ||
-      "GAMBHIR" ||
-      "gautam gambhir" ||
-      "Gautam Gambhir")
+    if (
+      lengthInput === 7 &&
+      (input !== "gambhir" ||
+        "Gambhir" ||
+        "GAMBHIR" ||
+        "gautam gambhir" ||
+        "Gautam Gambhir")
     ) {
       setisthala(true);
 
@@ -38,7 +40,7 @@ function App() {
     //   stopAudio2.stop();
     //   play3();
     //   setisthala(false);
-    // } 
+    // }
     else {
       stopAudio1.stop();
       stopAudio3.stop();
@@ -50,17 +52,23 @@ function App() {
 
   return (
     <div className="h-[100vh] flex flex-col gap-20 justify-center items-center bg-black z-[-10] ">
-      <video
-        className="right-0 bottom-0 w-[100%] z-[0] fixed  h-[100%]"
-        muted
-        autoPlay
-        loop
-        src={require("../src/assets/thalabolejodance.mp4")}
-      ></video>
+      {isthala === true ? (
+        <video
+          className="right-0 bottom-0 w-[100%] h-[100%]"
+          muted
+          autoPlay
+          loop
+          src={require("../src/assets/thalabolejodance.mp4")}
+        ></video>
+      ) : (
+        <div className="text-white"></div>
+      )}
 
       <div className=" z-[20] fixed h-full flex flex-col gap-20 justify-center items-center">
         <div>
-          <label className="text-white text-7xl">Thala for a reason ? (made it in an hour btw)</label>
+          <label className="text-white text-7xl">
+            Thala for a reason ? (made it in an hour btw)
+          </label>
         </div>
         <div>
           <input
@@ -83,6 +91,10 @@ function App() {
           ) : (
             <h1>Naughty ho rha</h1>
           )}
+        </label>
+        <label className="text-white text-3xl">
+          <h1>try writing not a 7 word</h1>
+          {/* <h1>try writing gambhir</h1> */}
         </label>
       </div>
     </div>
