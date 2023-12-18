@@ -60,7 +60,7 @@ function App() {
 
       <div className=" z-[20] fixed h-full flex flex-col gap-20 justify-center items-center">
         <div>
-          <label className="text-white text-7xl">Thala for a reason ?</label>
+          <label className="text-white text-7xl">Thala for a reason ? (made it in an hour btw)</label>
         </div>
         <div>
           <input
